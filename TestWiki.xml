@@ -1,0 +1,22 @@
+<xml>
+    <page><title>B</title><id>1</id><text>B B B B C C C D D</text></page>
+    <page><title>C</title><id>2</id><text>C C C C B B B D D D</text></page>
+    <page><title>D</title><id>3</id><text></text></page>
+</xml>
+<!--Expected: Rank(A) = 0.4326, Rank(B) = 0.2340, Rank(C) = 0.3333-->
+
+<!--term frequency: 1 -> 5 B's, 3 C's, 2 D's
+                    2 -> 3 B's, 5 C's, 3 D's
+                    3 -> 1 D's
+    normalized: 1 -> 5/5 B's, 3/5 C's, 2/5 D's
+                2 -> 3/5 B's, 5/5 C's, 3/5 D's
+                3 -> 1/1 D's
+    idf: B: log(3/2)
+         C: log(3/2)
+         D: log(3/3)
+    tf*idf: 1 -> 1*0.41 B's, 0.6*0.41 C's, 0.4*0 D's
+            2 -> 0.6*0.41 B's, 1*0.41 C's, 0.6*0 D's
+            3 -> 1*0 D's
+    tf*idf: 1 -> 0.4055 B's, 0.2433 C's, 0.0 D's
+        2 -> 0.2433 B's, 0.4055 C's, 0.0 D's
+        3 -> 0.0 D's                                -->
